@@ -51,4 +51,7 @@ backend.add(import('@backstage/plugin-search-backend-module-techdocs/alpha'));
 // kubernetes
 backend.add(import('@backstage/plugin-kubernetes-backend/alpha'));
 
+backend.add(import('@janus-idp/backstage-plugin-keycloak-backend/alpha'));
+
+backend.add(import('@internal/backstage-plugin-catalog-backend-module-keycloak-transformer'));
 backend.start();

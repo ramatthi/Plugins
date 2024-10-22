@@ -67,11 +67,29 @@ auth:
   providers:
     # See https://backstage.io/docs/auth/guest/provider
     guest: {}
+    clientId: backstage_ui
+    clientSecret: MhRayfeCBx3GrErmwMi1IWuCmfwLLHfz
+    issuer": https://dev-auth.voltacabs.com/realms/voltacabs
 
 scaffolder:
   # see https://backstage.io/docs/features/software-templates/configuration for software template options
 
 catalog:
+  providers:
+    keycloakOrg:
+      default:
+        # Remove the `/auth` if using keycloak 17+
+        baseUrl: https://dev-auth.voltacabs
+        loginRealm: voltacabs
+        realm: voltacabs
+        clientId: backstage_ui
+        clientSecret: MhRayfeCBx3GrErmwMi1IWuCmfwLLHfz
+        schedule: # Mandatory; same options as in TaskScheduleDefinition
+          # supports cron, ISO duration, "human duration" as used in code
+          frequency: { minutes: 30 } # Customize this to fit your needs
+          # supports ISO duration, "human duration" as used in code
+          timeout: { minutes: 3 } # Customize this to fit your needs
+          initialDelay: { seconds: 15 } # Customize this to fit your needs
   import:
     entityFilename: catalog-info.yaml
     pullRequestBranchName: backstage-integration
