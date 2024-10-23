@@ -32,7 +32,7 @@ export const catalogModuleKeycloakTransformer = createBackendModule({
   register(reg) {
     reg.registerInit({
       deps: { logger: coreServices.logger,    keycloak: keycloakTransformerExtensionPoint,},
-      async init({ keycloak }) {
+       async init({ keycloak }) {
         keycloak.setUserTransformer(customUserTransformer);
         keycloak.setGroupTransformer(customGroupTransformer);
       },

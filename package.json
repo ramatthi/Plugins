@@ -22,7 +22,8 @@
     "lint": "backstage-cli repo lint --since origin/master",
     "lint:all": "backstage-cli repo lint",
     "prettier:check": "prettier --check .",
-    "new": "backstage-cli new --scope internal"
+    "new": "backstage-cli new --scope internal",
+    "createFrontendPlugin": "backstage-cli create-plugin"
   },
   "workspaces": {
     "packages": [
@@ -55,6 +56,7 @@
   },
   "packageManager": "yarn@4.4.1",
   "dependencies": {
+    "@backstage/frontend-plugin-api": "^0.9.0",
     "@backstage/plugin-auth-backend": "^0.23.1",
     "@internal/backstage-plugin-catalog-backend-module-keycloak-transformer": "workspace:^",
     "@react-keycloak/web": "^3.4.0",
