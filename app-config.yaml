@@ -1,9 +1,9 @@
 app:
-  title: Scaffolded Backstage App
+  title: Volta Dashboard
   baseUrl: http://localhost:3000
 
 organization:
-  name: My Company
+  name: Volta
 
 backend:
   # Used for enabling authentication, secret is shared by all backend plugins
@@ -78,7 +78,7 @@ catalog:
     keycloakOrg:
       default:
         # Remove the `/auth` if using keycloak 17+
-        baseUrl: https://dev-auth.voltacabs
+        baseUrl: https://dev-auth.voltacabs.com
         loginRealm: voltacabs
         realm: voltacabs
         clientId: backstage_ui
